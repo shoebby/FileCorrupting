@@ -2,19 +2,19 @@
 # Make sure that the file type of the input and output match
 # Frankenstein'd together by Alexandria van Eekelen
 
-import random
-
 for y in range(1): #range = number of files
-    with open('rawdog/rawdog1.data', "rb") as f:
+    with open('example.data', "rb") as f:
         b = bytearray(f.read())
+        firstByte = b[0]
 
-    for x in range(len(b)-1):
-        if x > len(b) - 1:
-            n = 0
+    for x in range(len(b)-1): #iterate through the entire byte array
+        if x == len(b) - 1:
+            b[x] = firstByte
+            break
         else:
             n = x+1
 
         b[x] = b[n]
 
-    with open(f'rawdog/rawdog2.data', "wb") as f:
+    with open(f'example{y+1}.data', "wb") as f:
         f.write(bytes(b))
