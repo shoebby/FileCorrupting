@@ -1,4 +1,5 @@
 # script that shuffles random bytes!
+# Frankenstein'd together by Alexandria van Eekelen
 
 import random
 
